@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=prompt("Enter first number")
+        let num2=prompt("Enter second number")
+        let operator=prompt("Enter operator")
+        // if(operator=='+'){
+        //     console.log(num1+num2)
+        // }
+        // else if(operator=='-'){
+        //     console.log(num1-num2)
+        // }
+        // else if(operator=='*'){
+        //     console.log(num1*num2)
+        // }
+        // else if(operator=='/'){
+        //     console.log(num1/num2)
+        // }
+        // else{
+        //     console.log("Invalid operator")
+        // }
+        switch(operator){
+            case '+':
+                console.log(num1+num2)
+                break
+            case '-':
+                console.log(num1-num2)
+                break
+            case '*':
+                console.log(num1*num2)
+                break
+            case '/':
+                console.log(num1/num2)
+                break
+            default:
+                console.log("Invalid operator")
+        }
+    </script>
+</body>
+</html>

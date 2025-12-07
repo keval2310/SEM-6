@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="">
+        <label for="username">Username: </label>
+        <input type="text" minlength="8" id="username" placeholder="Enter your username">
+        <br><br>
+        <label for="password">Password: </label>
+        <input type="password" minlength="8" maxlength="12" id="password" placeholder="Enter your password">
+        <br><br>
+        <label for="repeatPassword">Repeat Password: </label>
+        <input type="password" minlength="8" maxlength="12" id="repeatPassword" placeholder="Repeat your password">
+        <br><br>
+        <label for="age">Age: </label>
+        <input type="number" min="18" id="age" placeholder="Enter your age">
+        <br><br>
+        <label for="enrollmentNo">Enrollment no.: </label>
+        <input type="text" id="enrollmentNo" placeholder="Enter your enrollment number">
+        <br><br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <br><br>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form=document.querySelector("form")
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const repeatPassword = document.getElementById("repeatPassword").value;
+            const age = document.getElementById("age").value;
+            const enrollmentNo = document.getElementById("enrollmentNo").value;
+            const email = document.getElementById("email").value;
+
+            console.log(username);
+            console.log(password);
+            console.log(repeatPassword);
+            console.log(age);
+            console.log(enrollmentNo);
+            console.log(email);
+
+            if(password!=repeatPassword){
+                alert("Passwords do not match")
+            }
+
+            if(!username || !password || !repeatPassword || !age || !enrollmentNo || !email){
+                alert("All fields are required")    
+            }
+
+            if(age<18){
+                alert("You must be 18 or older to register")
+            }
+
+            const emailPattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+            if(!emailPattern.test(email)){
+                alert("Enter a valid email")
+            }
+        })
+    </script>
+</body>
+</html>
