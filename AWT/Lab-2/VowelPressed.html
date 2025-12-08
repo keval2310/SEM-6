@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter a key">
+
+    <script>
+        let key=document.getElementById("input")
+        key.addEventListener('keydown', (event)=>{
+            let val = event.key;
+            if(val=='a' || val=='e' || val=='i' || val=='o' || val=='u'){
+                console.log(val+" is a vowel")
+            }
+            else{
+                console.log(val+" is not a vowel")
+            }
+        })
+    </script>
+</body>
+</html>

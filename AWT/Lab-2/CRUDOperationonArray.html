@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="name" placeholder="Enter a name">
+    <button onclick="add()" type="button">Add</button>
+    <br><br>
+
+    <button onclick="del()" type="button">Delete</button>
+    <br><br>
+
+    <input type="text" id="index" placeholder="Enter index to edit">
+    <button onclick="edit()" type="button">Edit</button>
+
+    <script>
+        let arr = [];
+        let key = document.getElementById("name");
+
+        function add() {
+            let name = key.value;
+            arr.push(name);
+            key.value = "";
+            console.log(arr);
+        }
+
+        function del() {
+            arr.pop();
+            console.log(arr);
+        }
+
+        function edit() {
+            let index = parseInt(document.getElementById("index").value);
+            let name = key.value;
+            if (isNaN(index) || index < 0 || index >= arr.length) {
+                alert("Invalid index");
+                return;
+            }
+            arr[index] = name;
+            key.value = "";
+            console.log(arr);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- WAP to prepare student registration form and validate it using js 
+Name,Rollno.,Sub1,Sub2
+Sub1:AWT,UI/UX,ML
+Sub2:INS,DEVops(if AWT in sub1)
+    SE,CN(if UI/UX in sub1)
+    DL,ACO(if ML in sub1) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+        <label for="rollno">Rollno:</label>
+        <input type="text" id="rollno" placeholder="Enter your rollno"><br><br>
+
+        <label for="sub1">Subject 1:</label>
+        <select id="sub1">
+            <option value="AWT">AWT</option>
+            <option value="UI/UX">UI/UX</option>
+            <option value="ML">ML</option>
+        </select><br><br>
+
+
+        <label for="sub2">Subject 2:</label>
+        <select id="sub2"></select><br><br>
+
+        <button type="submit">Submit</button>
+        
+        <script>
+            const sub1=document.getElementById("sub1");
+            const sub2=document.getElementById("sub2");
+
+            const subjects={
+                "AWT":["INS","Devops"],
+                "UI/UX":["SE","CN"],
+                "ML":["DL","ACO"]
+            }
+
+            function updateSub2(){
+                const selected=sub1.value
+                sub2.innerHTML=""
+
+                subjects[selected].forEach(sub => {
+                    const option=document.createElement("option");
+                    option.value=sub;
+                    option.textContent=sub;
+                    sub2.appendChild(option);
+                });
+            }
+
+            updateSub2();
+
+            sub1.addEventListener("change",updateSub2);
+
+            document.getElementById("form").addEventListener("submit",function(event){
+                event.preventDefault();
+
+                console.log(document.getElementById("name").value,document.getElementById("rollno").value,sub1.value,sub2.value);
+            })
+        </script>
+    </form>
+</body>
+</html>
