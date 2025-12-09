@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="roll" value="1">1 <br>
+    <input type="checkbox" name="roll" value="2">2 <br>
+    <input type="checkbox" name="roll" value="3">3 <br>
+    <input type="checkbox" name="roll" value="4">4 <br>
+    <input type="checkbox" name="roll" value="5">5 <br>
+    <input type="checkbox" name="roll" value="6">6 <br>
+    <input type="checkbox" name="roll" value="7">7 <br>
+    <input type="checkbox" name="roll" value="8">8 <br>
+    <input type="checkbox" name="roll" value="9">9 <br>
+    <input type="checkbox" name="roll" value="10">10 <br>
+
+    <button type="button" onclick="submit()">
+        Submit
+    </button>
+    <script>
+        function submit(){
+            let roll = document.querySelectorAll("input[name='roll']");
+            let rollNo = Array.from(roll).filter((item) => item.checked).map((item) => item.value);
+            console.log(rollNo);
+        }
+    </script>
+</body>
+</html>
