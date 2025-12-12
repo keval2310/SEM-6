@@ -1,0 +1,16 @@
+<IDENTIFIER , This>
+<IDENTIFIER , is>
+<IDENTIFIER , comment>
+<IDENTIFIER , This>
+<IDENTIFIER , is>
+<IDENTIFIER , another>
+<IDENTIFIER , comment>
+<KEYWORD , void>
+<IDENTIFIER , main>
+<KEYWORD , int>
+<IDENTIFIER , i>
+<IDENTIFIER , const>
+<KEYWORD , int>
+<IDENTIFIER , a>
+<IDENTIFIER , const>
+<KEYWORD , float>
